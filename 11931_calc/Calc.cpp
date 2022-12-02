@@ -15,6 +15,12 @@ class calculator_entity
         std::cin>>a;
         std::cout<<"Enter the second value";
         std::cin>>b;
+        if (b==0)
+        {
+            std::cout<<"Warning! You entered a 0 as the 2nd value. Some functions may not work."<<std::endl;
+            std::cin.get();        
+        }
+
 
     }
 
@@ -130,3 +136,23 @@ class calculator_entity
         return cl;
     }
 };
+
+int main()
+{
+    int choice;
+    calculator_entity c;
+    std::cout<<"====================== CALCULATOR ======================"<<std::endl;
+    std::cout<<"Enter 1 to Define Values.";
+    std::cout<<"\n Enter 2 To Add Values.";
+    std::cout<<"\n Enter 3 To Subtract Values.";
+    std::cout<<"\n Enter 4 To Multiply Values.";
+    std::cout<<"\n Enter 5 To Divide Values.";
+    std::cout<<"\n Enter 6 To Find the sqroot of a Value.";
+    std::cout<<"\n Enter 7 To Find the Cosine of a Value.";
+    std::cout<<"\n Enter 8 To Find the Sine of a Value.";  
+    std::cout<<"\n Enter 9 To Find the Tangent of a Value.";
+    std::cout<<"\n Enter 10 To Find the Arc Cosine of a Value.";
+    std::cout<<"\n Enter 11 To Find the Arc Sine of a Value.";
+    std::cout<<"\n Enter 12 To Find the Arc Tangent of a Value.";                        
+    return 0;
+}
