@@ -1,5 +1,5 @@
 //ID: 11931, BS CS (SE)
-//5th Semester, Section D BS CS SE
+//5th Semester, Section D 
 // Hi Sir Iftikhar :D
 #include <iostream>
 #include <math.h>
