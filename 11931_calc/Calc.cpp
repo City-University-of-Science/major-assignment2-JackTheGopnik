@@ -1,158 +1,211 @@
 #include <iostream>
 #include <math.h>
-#include <bits/stdc++.h>
 
-class calculator_entity
+double add (double x, double y)
 {
-    private:
-    float a=0,b=0;
-    float pi = 3.14;
-    public:
+    return x + y;
+}
 
-    void input_getter()
-    {
-        std::cout<<"Enter the first value";
-        std::cin>>a;
-        std::cout<<"Enter the second value";
-        std::cin>>b;
-        if (b==0)
-        {
-            std::cout<<"Warning! You entered a 0 as the 2nd value. Some functions may not work."<<std::endl;
-            std::cin.get();        
-        }
+double subtract (double x, double y)
+{
+    return x - y;
+}
 
+double multiply (double x, double y)
+{
+    return x * y;
+}
 
+double divide (double x, double y)
+{
+    if(y==0)
+    {
+        std::cout<<"You Entered a Null value as the dividand, Undefined.\n";
+        return 0;
     }
+    return x / y;
+}
 
-    float add()
-    {
-        return a+b;
-    }
+double sqroot (double x)
+{
+    return sqrt(x);
+}
 
-    float subtract()
-    {
-        return a-b;
-    }
-    
-    float multiply()
-    {
-        return a*b;
-    }
+double log_simple (double x)
+{
+    return log(x);
+}
 
-    float division()
-    {
-        if (b==0)
-        {
-            std::cout<<"Division By Zero, UNDEFINED!"<<std::endl;
-            return NULL;
-        }
-    }
-    float squroot()
-    {
-        int choice;
-        std::cout<<"Which Number would you like to find the Square root of: \n first value (1) or second value (2)? \n";
-        std::cin>>choice;
-        switch (choice)
-        {
-        case 1:
-            std::cout<<"The square root of "<<a<<"is: ";
-            return sqrt(a);
-            break;
-    
-        case 2:
-            std::cout<<"The square root of "<<b<<"is: ";
-            return sqrt(b);
-            break;
-                
-        default:
-            std::cout<<"You entered an incorrect value, try again.\n";
-            break;
-        }
-    }
+double log_base (double x)
+{
+    return log10(x);
+}
 
-    float cos(float val)
-    {
-        float c = cos(val);
-        return c;
-    }
+double sine (double x)
+{
+    return sin(x);
+}
 
-        float tan(float val)
-    {
-        float t = tan(val);
-        return t;
-    }
+double cosine (double x)
+{
+    return cos(x);
+}
 
-        float sin(float val)
-    {
-        float s = sin(val);
-        return s;
-    }
+double tangent (double x)
+{
+    return tan(x);
+}
 
-        float cosa(float val)
-    {
-        float ac = acos(val);
-        return ac;
-    }
+double arc_sine (double x)
+{
+    return asin(x);
+}
 
-        float tana(float val)
-    {
-        float at = atan(val);
-        return at;
-    }
+double arc_cosine (double x)
+{
+    return acos(x);
+}
 
-        float sina(float val)
-    {
-        float as = asin(val);
-        return as;
-    }
+double arc_tan (double x)
+{
+    return atan(x);
+}
 
-    float hcos(float val)
-    {
-        float ch = cosh(val);
-        return ch;
-    }
+double sineh (double x)
+{
+    return sinh(x);
+}
 
-        float htan(float val)
-    {
-        float th = tanh(val);
-        return th;
-    }
+double cosineh (double x)
+{
+    return cosh(x);
+}
 
-        float hsin(float val)
-    {
-        float sh = sinh(val);
-        return sh;
-    }
+double tangenth (double x)
+{
+    return tanh(x);
+}
 
-    float natural_log(double value)
-    {
-        double nl = log(value);
-        return nl;
-    }
+double cube (double x)
+{
+    return x*x*x;
+}
 
-    float common_log(double value)
-    {
-        double cl = log10(value);
-        return cl;
-    }
-};
+double power (double x, double y)
+{
+    return pow(x,y);
+}
+
+double average (double x, double y)
+{
+    return (x+y)/2;
+}
 
 int main()
 {
-    int choice;
-    calculator_entity c;
-    std::cout<<"====================== CALCULATOR ======================"<<std::endl;
-    std::cout<<"Enter 1 to Define Values.";
-    std::cout<<"\n Enter 2 To Add Values.";
-    std::cout<<"\n Enter 3 To Subtract Values.";
-    std::cout<<"\n Enter 4 To Multiply Values.";
-    std::cout<<"\n Enter 5 To Divide Values.";
-    std::cout<<"\n Enter 6 To Find the sqroot of a Value.";
-    std::cout<<"\n Enter 7 To Find the Cosine of a Value.";
-    std::cout<<"\n Enter 8 To Find the Sine of a Value.";  
-    std::cout<<"\n Enter 9 To Find the Tangent of a Value.";
-    std::cout<<"\n Enter 10 To Find the Arc Cosine of a Value.";
-    std::cout<<"\n Enter 11 To Find the Arc Sine of a Value.";
-    std::cout<<"\n Enter 12 To Find the Arc Tangent of a Value.";                        
-    return 0;
+double x, y, result; 
+
+int operation;
+
+std::cout<<"enter the first number:"<<std::endl;
+std::cin>>x;std::cout<<""<<std::endl;
+std::cout<<"enter the second number:"<<std::endl;
+std::cin>>y;std::cout<<""<<std::endl;
+std::cout<<"enter the operation you would like to perform:\n1 for addition , 2 for subtraction,3 for multiplication, 4 for division,";
+std::cout<<"1 for square root, 2 for natural log, 3 for log to the base 10,";
+std::cout<<"\n4 for sin , 5 for cos, 6 for tan,";
+std::cout<<"\n7 for asin(arcsine), 8 for acos(arccosine), 9 for atan(arctangent),";
+std::cout<<"\n10 for sinh(sine hyperbolic), 11 for cosh(cos hyperbolic), 12 tanh(tan hyperbolic)";
+std::cout<<"\n 13 for cube, 14 for average, 15 power";
+
+do{
+
+switch(operation)
+{
+case '1':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '2':
+    result = subtract(x,y);
+    std::cout<<"The subtracted numbers"<<x<<" & "<<y<<"leave behind: "<<result<<std::endl;
+    break;
+
+case '3':
+    result = multiply(x,y);
+    std::cout<<"The multiplied Numbers"<<x<<" & "<<y<<" result in: "<<result<<std::endl;
+    break;
+
+case '4':
+    result = divide(x,y);
+    std::cout<<"The Divided Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '5':
+    result = sine(x);
+    std::cout<<"The sine of"<<x<<"results in: "<<result<<std::endl;
+    break;
+
+case '6':
+    result = cos(x);
+    std::cout<<"The cos of "<<x<<" result in: "<<result<<std::endl;
+    break;
+
+case '7':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '8':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '9':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '10':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '11':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '12':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '13':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '14':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+case '15':
+    result = add(x,y);
+    std::cout<<"The Added Numbers"<<x<<" & "<<y<<"result in: "<<result<<std::endl;
+    break;
+
+
+}
+
+
+
+
+
+}while(operation != 'e');
+
+return 0;
+
 }
