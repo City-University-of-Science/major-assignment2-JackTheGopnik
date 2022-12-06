@@ -12,8 +12,30 @@ void value_setter() //standard encapsulation, via Setter.
 double xc284, xc285; //actual ommitted addresses of where the values are stored in memory :P    
 std::cout<<"enter the first number:"<<std::endl;
 std::cin>>xc284;
+while(1){ //simple way to catch incorrect inputs :P
+if(std::cin.fail())
+{  
+std::cin.clear();
+std::cin.ignore();
+std::cout<<"number is invalid, try another number:"<<std::endl;
+std::cin>>xc284;
+}
+if(!std::cin.fail())
+break;
+}
 std::cout<<"enter the second number:"<<std::endl;
 std::cin>>xc285;
+while(1){
+if(std::cin.fail())
+{  
+std::cin.clear();
+std::cin.ignore();
+std::cout<<"number is invalid, try another number:"<<std::endl;
+std::cin>>xc285;
+}
+if(!std::cin.fail())
+break;
+}
 x = xc284;
 y = xc285;
 
@@ -142,7 +164,18 @@ std::cout<<"\n 14 for cube, 15 for average, 16 power, 17 to exit.\n";
 
 
 do{
-std::cout<<"\nYour Choice: \n";std::cin>>operation;    
+std::cout<<"\nYour Choice: \n";std::cin>>operation;
+while(1){//Now Listen Here, No Wrong Inputs are getting past this point!
+if(std::cin.fail())
+{  
+std::cin.clear();
+std::cin.ignore();
+std::cout<<"invalid option. Try Again"<<std::endl;
+std::cin>>operation;
+}
+if(!std::cin.fail())//congratulations, you aren't the wrong input type.
+break;
+}  
 switch(operation)
 {
     double result;
@@ -227,9 +260,8 @@ case 16:
 
 default:
     std::cout<<"Whatever you entered, Is invalid. Re-enter it >:(";
-
+    break;
 }
-
 
 
 
