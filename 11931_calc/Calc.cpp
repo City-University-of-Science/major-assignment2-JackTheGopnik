@@ -1,4 +1,5 @@
-//ID: 11931, BS CS (SE), 5th Semester, SDC Major Assignment.
+//ID: 11931, BS CS (SE)
+//5th Semester, Section D BS CS SE
 // Hi Sir Iftikhar :D
 #include <iostream>
 #include <math.h>
